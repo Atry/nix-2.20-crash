@@ -1,9 +1,5 @@
 {
   inputs = {
-    poetry-add-requirements-txt = {
-      url = "github:tddschn/poetry-add-requirements.txt/710dde128b3746e7269e423f46f1e0e432c47043";
-      flake = false;
-    };
     poetry2nix = {
       url = "github:nix-community/poetry2nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -16,7 +12,12 @@
         (inputs.poetry2nix.lib.mkPoetry2Nix {
           pkgs = inputs.nixpkgs.legacyPackages.${system};
         }).mkPoetryApplication {
-          projectDir = inputs.poetry-add-requirements-txt;
+          projectDir = pkgs.fetchFromGitHub {
+            owner = "tddschn";
+            repo = "poetry-add-requirements.txt";
+            rev = "710dde128b3746e7269e423f46f1e0e432c47043";
+            hash = "sha256-BpryyfhKTNPDYIZXHTfHexVPZMhl76L81tsfOGvQKto=";
+          };
           preferWheels = true;
         };
     }) inputs.nixpkgs.legacyPackages;

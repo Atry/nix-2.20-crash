@@ -17,6 +17,7 @@
           pkgs = inputs.nixpkgs.legacyPackages.${system};
         }).mkPoetryApplication {
           projectDir = inputs.poetry-add-requirements-txt;
+          preferWheels = true;
         };
     });
   };

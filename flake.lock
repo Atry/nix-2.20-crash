@@ -58,16 +58,17 @@
     "poetry-add-requirements-txt": {
       "flake": false,
       "locked": {
-        "lastModified": 1705093555,
-        "narHash": "sha256-Qaw6rqU35vdODoz210PrVJQFYtIUYFAHXuhIZ+rDYLA=",
+        "lastModified": 1654077719,
+        "narHash": "sha256-BpryyfhKTNPDYIZXHTfHexVPZMhl76L81tsfOGvQKto=",
         "owner": "tddschn",
         "repo": "poetry-add-requirements.txt",
-        "rev": "d109b2315408e91c82283fe5c39bdec1a2735ce5",
+        "rev": "710dde128b3746e7269e423f46f1e0e432c47043",
         "type": "github"
       },
       "original": {
         "owner": "tddschn",
         "repo": "poetry-add-requirements.txt",
+        "rev": "710dde128b3746e7269e423f46f1e0e432c47043",
         "type": "github"
       }
     },

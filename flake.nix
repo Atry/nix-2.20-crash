@@ -11,7 +11,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
   };
   outputs = inputs: {
-    packages = inputs.nixpkgs.lib.attrsets.genAttrs inputs.nixpkgs.lib.systems.flakeExposed (system: {
+    packages = builtins.mapAttrs (system: pkgs: {
       default = 
         (inputs.poetry2nix.lib.mkPoetry2Nix {
           pkgs = inputs.nixpkgs.legacyPackages.${system};
@@ -19,7 +19,9 @@
           projectDir = inputs.poetry-add-requirements-txt;
           preferWheels = true;
         };
-    });
+    }) inputs.nixpkgs.legacyPackages;
+    
+
   };
 }
 
